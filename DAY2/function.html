@@ -1,6 +1,6 @@
 <script>
     // const name = (studentName) =>{
- 
+
     // }
     // name();
 
@@ -10,10 +10,119 @@
     // }
     // console.log();
 
-    const addNumbers = (...nums)=>{
-        return a+b+c+d;
-    }
-    console.log(addNumbers(10,20,30,40));
-    
-    
+    // const addNumbers = (...nums)=>{
+    //     return a+b+c+d;
+    // }
+    // console.log(addNumbers(10,20,30,40));
+
+    // Task 1
+
+    const getFullName = (firstName, lastName) => {
+        return firstName + " " + lastName;
+    };
+
+    console.log(getFullName("Bharath", "Kumar"));
+
+    // Task 2
+
+    const calculateTotal = (price, quantity) => {
+        return price * quantity;
+    };
+
+    console.log(calculateTotal(500, 2));
+
+    // Task 3
+
+    const checkVotingEligibility = (age) => {
+        return age >= 18 ? "Eligible for Voting" : "Not Eligible for Voting";
+    };
+
+    console.log(checkVotingEligibility(23));
+
+    // Task 4
+
+    const findLargest = (num1, num2, num3) => {
+        return Math.max(num1, num2, num3);
+    };
+
+    console.log(findLargest(50, 80, 30));
+
+    // Task 5
+
+    const getUserName = (username = "Guest") => {
+        return username;
+    };
+
+    console.log(getUserName());
+
+    console.log(getUserName("Bharath"));
+
+    // Task 6
+
+    const calculate = (num1, num2) => {
+
+        return {
+            sum: num1 + num2,
+            difference: num1 - num2,
+            multiplication: num1 * num2,
+            division: num1 / num2
+        };
+    };
+
+    console.log(calculate(20, 10));
+
+    // Task 7
+
+    const calculateMarks = (m1, m2, m3, m4, m5) => {
+
+        const total = m1 + m2 + m3 + m4 + m5;
+
+        const average = total / 5;
+
+        return {
+            total,
+            average
+        };
+    };
+
+    console.log(calculateMarks(80, 75, 90, 85, 70));
+
+    // Task 8
+
+    const calculateSalary = (salary) => {
+
+        const hra = salary * 0.20;
+
+        const da = salary * 0.10;
+
+        const totalSalary = salary + hra + da;
+
+        return {
+            hra,
+            da,
+            totalSalary
+        };
+    };
+
+    console.log(calculateSalary(30000));
+
+    // Task 9
+
+    const convertTemperature = (celsius) => {
+
+        return (celsius * 9 / 5) + 32;
+    };
+
+    console.log(convertTemperature(30));
+
+    // Task 10
+
+    const checkNumber = (number) => {
+
+        return number % 2 === 0 ? "Even" : "Odd";
+    };
+
+    console.log(checkNumber(10));
+
+    console.log(checkNumber(7));
 </script>
