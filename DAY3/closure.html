@@ -1,0 +1,381 @@
+<script>
+    // Task 1 - Bank Account Using Closure
+
+    const createBankAccount = () => {
+
+        let balance = 5000; // Private Variable
+
+        return {
+
+            deposit: (amount) => {
+
+                balance += amount;
+
+                console.log(`Deposited: ${amount}`);
+            },
+
+            withdraw: (amount) => {
+
+                if (amount <= balance) {
+
+                    balance -= amount;
+
+                    console.log(`Withdrawn: ${amount}`);
+
+                } else {
+
+                    console.log("Insufficient Balance");
+                }
+            },
+
+            checkBalance: () => {
+
+                console.log(`Current Balance: ${balance}`);
+            }
+        };
+    };
+
+    const account = createBankAccount();
+
+    account.checkBalance();
+
+    account.deposit(2000);
+
+    account.checkBalance();
+
+    account.withdraw(1000);
+
+    account.checkBalance();
+
+    // Task 2 - Student Attendance Counter
+
+    const createAttendanceCounter = () => {
+
+        let attendanceCount = 0;
+
+        return () => {
+
+            attendanceCount++;
+
+            console.log(`Attendance Count: ${attendanceCount}`);
+        };
+    };
+
+    const markAttendance = createAttendanceCounter();
+
+    markAttendance();
+    markAttendance();
+    markAttendance();
+    markAttendance();
+
+    // Task 3 - Website Visitor Counter Using Closure
+
+    const visitorCounter = () => {
+
+        let totalVisitors = 0;
+
+        return () => {
+
+            totalVisitors++;
+
+            console.log(`Total Visitors: ${totalVisitors}`);
+        };
+    };
+
+    const visitWebsite = visitorCounter();
+
+    visitWebsite();
+
+    visitWebsite();
+
+    visitWebsite();
+
+    visitWebsite();
+
+    visitWebsite();
+
+    // Task 4 - Shopping Cart Counter Using Closure
+
+    const createCart = () => {
+
+        let itemCount = 0;
+
+        return {
+
+            addProduct: () => {
+
+                itemCount++;
+
+                console.log(`Product Added`);
+            },
+
+            removeProduct: () => {
+
+                if (itemCount > 0) {
+
+                    itemCount--;
+
+                    console.log(`Product Removed`);
+
+                } else {
+
+                    console.log("Cart is Empty");
+                }
+            },
+
+            displayItems: () => {
+
+                console.log(`Total Items in Cart: ${itemCount}`);
+            }
+        };
+    };
+
+    const cart = createCart();
+
+    cart.displayItems();
+
+    cart.addProduct();
+
+    cart.addProduct();
+
+    cart.addProduct();
+
+    cart.displayItems();
+
+    cart.removeProduct();
+
+    cart.displayItems();
+
+    // Task 5 - ATM Machine System Using Closure
+
+    const createATM = () => {
+
+        let balance = 10000;
+
+        return {
+
+            withdraw: (amount) => {
+
+                if (amount <= balance) {
+
+                    balance -= amount;
+
+                    console.log(`Withdrawn Amount: ${amount}`);
+
+                } else {
+
+                    console.log("Insufficient Balance");
+                }
+            },
+
+            checkBalance: () => {
+
+                console.log(`Available Balance: ${balance}`);
+            }
+        };
+    };
+
+    const atm = createATM();
+
+    atm.checkBalance();
+
+    atm.withdraw(2000);
+
+    atm.checkBalance();
+
+    atm.withdraw(5000);
+
+    atm.checkBalance();
+
+    atm.withdraw(10000);
+
+    atm.checkBalance();
+
+    // Task 6 - Login Attempt Tracker Using Closure
+
+    const createLoginTracker = () => {
+
+        let attemptCount = 0;
+
+        return () => {
+
+            attemptCount++;
+
+            console.log(`Login Attempt: ${attemptCount}`);
+        };
+    };
+
+    const login = createLoginTracker();
+
+    login();
+
+    login();
+
+    login();
+
+    login();
+
+    login();
+
+    // Task 7 - Callback Injection - Payment Gateway
+
+    const processPayment = (callback) => {
+
+        console.log("Processing Payment...");
+
+        callback();
+    };
+
+
+    // GPay Callback
+
+    const gpay = () => {
+
+        console.log("Payment Successful through GPay");
+    };
+
+
+    // PhonePe Callback
+
+    const phonePe = () => {
+
+        console.log("Payment Successful through PhonePe");
+    };
+
+
+    // Paytm Callback
+
+    const paytm = () => {
+
+        console.log("Payment Successful through Paytm");
+    };
+
+
+
+    // Dynamic Callback Injection
+
+    processPayment(gpay);
+
+    processPayment(phonePe);
+
+    processPayment(paytm);
+
+    // Task 8 - Callback Injection - User Actions
+
+    const executeAction = (callback) => {
+
+        console.log("Executing User Action...");
+
+        callback();
+    };
+
+
+    // Login Callback
+
+    const loginUser = () => {
+
+        console.log("User Logged In Successfully");
+    };
+
+
+    // Logout Callback
+
+    const logout = () => {
+
+        console.log("User Logged Out Successfully");
+    };
+
+
+    // Register Callback
+
+    const register = () => {
+
+        console.log("User Registered Successfully");
+    };
+
+
+
+    // Callback Injection
+
+    executeAction(login);
+
+    executeAction(logout);
+
+    executeAction(register);
+
+    // Task 9 - setTimeout Notification System
+
+    console.log("Sending Notification...");
+
+    setTimeout(() => {
+
+        console.log("Notification Sent");
+
+    }, 3000);
+
+    // Task 10 - Closure + Callback + setTimeout
+
+    const createOrderSystem = () => {
+
+        let orderCount = 0;
+
+        return (callback) => {
+
+            orderCount++;
+
+            console.log(`Order Number: ${orderCount}`);
+
+            console.log("Processing...");
+
+            setTimeout(() => {
+
+                callback();
+
+                console.log("Order Completed");
+
+            }, 3000);
+        };
+    };
+
+
+
+    // Mobile Order Callback
+
+    const mobileOrder = () => {
+
+        console.log("Mobile Order Placed");
+    };
+
+
+    // Laptop Order Callback
+
+    const laptopOrder = () => {
+
+        console.log("Laptop Order Placed");
+    };
+
+
+    // TV Order Callback
+
+    const tvOrder = () => {
+
+        console.log("TV Order Placed");
+    };
+
+
+
+    // Create Order System
+
+    const processOrder = createOrderSystem();
+
+
+
+    // Callback Injection
+
+    processOrder(mobileOrder);
+
+    processOrder(laptopOrder);
+
+    processOrder(tvOrder);
+    
+</script>
