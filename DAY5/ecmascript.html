@@ -1,0 +1,173 @@
+<script>
+    // ===============================
+    // Task 1: Student Profile using Template Literals
+    // ===============================
+
+    const studentName = "Bharath";
+    const course = "Frontend Development";
+    const city = "Chennai";
+    const institute = "ABC Training Institute";
+
+    console.log(`
+Student Profile
+---------------
+Name      : ${studentName}
+Course    : ${course}
+City      : ${city}
+Institute : ${institute}
+`);
+
+
+    // ===============================
+    // Task 2: Arrow Function to Calculate Yearly Salary
+    // ===============================
+
+    const calculateYearlySalary = (name, designation, monthlySalary) => {
+        const yearlySalary = monthlySalary * 12;
+
+        console.log(`
+Employee Details
+----------------
+Name          : ${name}
+Designation   : ${designation}
+Monthly Salary: ${monthlySalary}
+Yearly Salary : ${yearlySalary}
+`);
+    };
+
+    calculateYearlySalary("Bharath", "Frontend Developer", 30000);
+
+
+    // ===============================
+    // Task 3: Arrow Function for Discount Calculation
+    // ===============================
+
+    const getDiscountPrice = (price, discountPercentage) => {
+        return price - (price * discountPercentage / 100);
+    };
+
+    console.log("Final Discounted Price:", getDiscountPrice(1000, 20));
+
+
+    // ===============================
+    // Task 4: Default Parameters for User Registration
+    // ===============================
+
+    const registerUser = (username, role = "User") => {
+        console.log(`
+User Registration
+-----------------
+Username : ${username}
+Role     : ${role}
+`);
+    };
+
+    registerUser("Bharath");
+    registerUser("AdminUser", "Admin");
+
+
+    // ===============================
+    // Task 5: Shopping Cart using Rest Parameters
+    // ===============================
+
+    const calculateTotalBill = (...prices) => {
+        return prices.reduce((total, price) => total + price, 0);
+    };
+
+    console.log("Total Bill Amount:", calculateTotalBill(500, 300, 200, 100));
+
+
+    // ===============================
+    // Task 6: Merge Arrays using Spread Operator
+    // ===============================
+
+    const frontendTech = ["HTML", "CSS", "JavaScript", "Angular"];
+    const backendTech = ["Java", "Spring Boot", "MySQL"];
+
+    const allTechnologies = [...frontendTech, ...backendTech];
+
+    console.log("Merged Technologies:", allTechnologies);
+
+
+    // ===============================
+    // Task 7: Copy Object and Add Properties using Spread Operator
+    // ===============================
+
+    const employee = {
+        id: 101,
+        name: "Bharath"
+    };
+
+    const updatedEmployee = {
+        ...employee,
+        department: "IT",
+        experience: "2 Years",
+        salary: 50000
+    };
+
+    console.log("Original Employee:", employee);
+    console.log("Updated Employee:", updatedEmployee);
+
+
+    // ===============================
+    // Task 8: Object Destructuring
+    // ===============================
+
+    const student = {
+        id: 1,
+        name: "Bharath",
+        age: 23,
+        courseName: "Angular"
+    };
+
+    const { id, name, age, courseName } = student;
+
+    console.log("ID:", id);
+    console.log("Name:", name);
+    console.log("Age:", age);
+    console.log("Course:", courseName);
+
+
+    // ===============================
+    // Task 9: Enhanced Object Literals
+    // ===============================
+
+    const empId = 201;
+    const empName = "Bharath";
+    const designation = "Frontend Developer";
+
+    const employeeDetails = {
+        empId,
+        empName,
+        designation
+    };
+
+    console.log(employeeDetails);
+
+
+    // ===============================
+    // Task 10: Optional Chaining and Nullish Coalescing
+    // ===============================
+
+    const user = {
+        profile: {
+            address: {
+                city: "Chennai"
+            }
+        }
+    };
+
+    const cityName = user?.profile?.address?.city ?? "City Not Available";
+
+    console.log("City:", cityName);
+
+
+    // Example when data is missing
+
+    const user2 = {};
+
+    const cityName2 = user2?.profile?.address?.city ?? "City Not Available";
+
+    console.log("City:", cityName2);
+    
+</script>
