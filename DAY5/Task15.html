@@ -1,0 +1,148 @@
+<script>
+
+    // Task 15 - Mini Employee Management System (ES6+)
+
+
+
+    // Employee Data
+
+    const createEmployee = (
+        id,
+        name,
+        department = "IT",
+        monthlySalary = 30000
+    ) => {
+
+        return {
+            id,
+            name,
+            department,
+            monthlySalary
+        };
+    };
+
+
+
+    // Add Employee
+
+    const addEmployee = (...employees) => {
+
+        return [...employees];
+    };
+
+
+
+    // Update Employee
+
+    const updateEmployee = (employee, updatedData) => {
+
+        return {
+            ...employee,
+            ...updatedData
+        };
+    };
+
+
+
+    // Calculate Salary
+
+    const calculateSalary = ({ name, monthlySalary }) => {
+
+        const yearlySalary = monthlySalary * 12;
+
+        console.log(`
+Employee Name : ${name}
+Monthly Salary: ₹${monthlySalary}
+Yearly Salary : ₹${yearlySalary}
+`);
+    };
+
+
+
+    // Display Employee
+
+    const displayEmployee = (employee) => {
+
+        const {
+            id,
+            name,
+            department,
+            monthlySalary,
+            address
+        } = employee;
+
+        const city =
+            address?.city ?? "City Not Available";
+
+        console.log(`
+Employee ID   : ${id}
+Employee Name : ${name}
+Department    : ${department}
+Salary        : ₹${monthlySalary}
+City          : ${city}
+`);
+    };
+
+
+
+
+
+    // Create Employees
+
+    const employee1 = createEmployee(
+        101,
+        "Bharath",
+        "Frontend",
+        40000
+    );
+
+    const employee2 = createEmployee(
+        102,
+        "Kumar",
+        "Backend",
+        50000
+    );
+
+
+
+
+    // Add Employees
+
+    const employees = addEmployee(
+        employee1,
+        employee2
+    );
+
+    console.log(employees);
+
+
+
+
+    // Update Employee
+
+    const updatedEmployee = updateEmployee(
+        employee1,
+        {
+            department: "Angular Developer",
+            experience: "2 Years",
+            address: {
+                city: "Salem"
+            }
+        }
+    );
+
+
+
+
+    // Display Employee
+
+    displayEmployee(updatedEmployee);
+
+
+
+
+    // Calculate Salary
+
+    calculateSalary(updatedEmployee);
+
+</script>

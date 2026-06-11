@@ -169,5 +169,62 @@ Role     : ${role}
     const cityName2 = user2?.profile?.address?.city ?? "City Not Available";
 
     console.log("City:", cityName2);
-    
+
+    // Task 11 - Highest Mark Using Rest Parameter
+
+    const getHighestMark = (...marks) => {
+
+        return Math.max(...marks);
+    };
+
+    console.log(getHighestMark(75, 85, 90, 65, 95));
+
+    // Task 12 - Merge Multiple Arrays
+
+    const mergeCourses = (...courses) => {
+
+        return [...courses.flat()];
+    };
+
+    console.log(
+        mergeCourses(
+            ["HTML", "CSS"],
+            ["JavaScript", "Angular"],
+            ["Java", "Spring"]
+        )
+    );
+
+    // Task 13 - Clone Product Object
+
+    const product = {
+        name: "Laptop",
+        stock: 10
+    };
+
+    const updatedProduct = {
+        ...product,
+        stock: 25
+    };
+
+    console.log(product);
+
+    console.log(updatedProduct);
+
+    // Task 14 - Destructuring + Template Literals
+
+    const displayUser = ({ name, age, city }) => {
+
+        console.log(`
+Name : ${name}
+Age  : ${age}
+City : ${city}
+`);
+    };
+
+    displayUser({
+        name: "Bharath",
+        age: 23,
+        city: "Salem"
+    });
+
 </script>
